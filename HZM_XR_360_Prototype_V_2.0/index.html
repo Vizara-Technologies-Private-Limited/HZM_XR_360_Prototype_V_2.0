@@ -101,7 +101,7 @@
 
   <script src="Build/UnityLoader.js"></script>
   <script>
-  var gameInstance = UnityLoader.instantiate("gameContainer", "Build/9thSept2020_HZM_Prism.json", {onProgress: UnityProgress});
+  var gameInstance = UnityLoader.instantiate("gameContainer", "Build/HZM_360VR_Build.json", {onProgress: UnityProgress});
   function UnityProgress(gameInstance, progress) {
     if (!gameInstance.Module) {
       return;
@@ -120,6 +120,11 @@
       }, 2000);
     }
   }
+  UnityLoader.instantiate("unityContainer", "Build/HZM_360VR_Build.json", {
+    Module: {
+        "webglContextAttributes": {"preserveDrawingBuffer": true},
+    }
+});
   </script>
 
 </html>
